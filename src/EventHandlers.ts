@@ -44,7 +44,7 @@ SiloFactory.NewSilo.handler(async ({ event, context }) => {
     silo1: event.params.silo1,
     siloConfig: event.params.siloConfig,
   };
-
+//hello
   context.SiloFactory_NewSilo.set(entity);
 });
 Silo.AccruedInterest.handler(async ({ event, context }) => {
