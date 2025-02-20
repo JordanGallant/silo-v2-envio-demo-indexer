@@ -1,0 +1,116 @@
+type SiloFactory_NewSilo {
+  id: ID!
+  implementation: String!
+  token0: String!
+  token1: String!
+  silo0: String!
+  silo1: String!
+  siloConfig: String!
+}
+
+type Silo_AccruedInterest {
+  id: ID!
+  hooksBefore: BigInt!
+}
+
+type Silo_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type Silo_Borrow {
+  id: ID!
+  sender: String!
+  receiver: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+}
+
+type Silo_CollateralTypeChanged {
+  id: ID!
+  borrower: String!
+}
+
+type Silo_Deposit {
+  id: ID!
+  sender: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+}
+
+type Silo_DepositProtected {
+  id: ID!
+  sender: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+}
+
+type Silo_EIP712DomainChanged {
+  id: ID!
+}
+
+type Silo_FlashLoan {
+  id: ID!
+  amount: BigInt!
+}
+
+type Silo_HooksUpdated {
+  id: ID!
+  hooksBefore: BigInt!
+  hooksAfter: BigInt!
+}
+
+type Silo_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type Silo_NotificationSent {
+  id: ID!
+  notificationReceiver: String!
+  success: Boolean!
+}
+
+type Silo_Repay {
+  id: ID!
+  sender: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+}
+
+type Silo_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+}
+
+type Silo_Withdraw {
+  id: ID!
+  sender: String!
+  receiver: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+}
+
+type Silo_WithdrawProtected {
+  id: ID!
+  sender: String!
+  receiver: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+}
+
+type Silo_WithdrawnFeed {
+  id: ID!
+  daoFees: BigInt!
+  deployerFees: BigInt!
+}

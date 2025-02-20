@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: silo-v2
+networks:
+- id: 42161
+  start_block: 0
+  contracts:
+  - name: SiloFactory
+    address:
+    - 0xf7dc975C96B434D436b9bF45E7a45c95F0521442
+    handler: src/EventHandlers.ts
+    events:
+    - event: NewSilo(address indexed implementation, address indexed token0, address indexed token1, address silo0, address silo1, address siloConfig)
+  - name: Silo
+    address:
+    - 0x2a3B686dEC8DeD90aEd1aEC9dCf289DbF82C7973
+    - 0x2691aDFAaD4A34502c2Be4AAb6C26bF4497EB582
+    - 0x3c91d761920bD6063606CE478FE8E39e61c3f2C4
+    - 0x7ae9788d79a15B8897fF3F9e85f8885B0c4F93df
+    - 0x584D5b1A086F8F6F6607C1902424ed16FA5d5843
+    - 0xED586ca4F7a6f3924730934144d39a16E6643D35
+    - 0xae91CD64041E1Bd4f4954254E146faCbf7CB9a77
+    - 0x5e5540930ef576C5044Af00056e85327600ab305
+    - 0x7b54D87C877A10CD0b06De61D7CC17210D8c52ec
+    - 0x593aFB8331835f897ECE3f415Bcb6F325D837bb8
+    handler: src/EventHandlers.ts
+    events:
+    - event: AccruedInterest(uint256 hooksBefore)
+    - event: Approval(address indexed owner, address indexed spender, uint256 value)
+    - event: Borrow(address indexed sender, address indexed receiver, address indexed owner, uint256 assets, uint256 shares)
+    - event: CollateralTypeChanged(address indexed borrower)
+    - event: Deposit(address indexed sender, address indexed owner, uint256 assets, uint256 shares)
+    - event: DepositProtected(address indexed sender, address indexed owner, uint256 assets, uint256 shares)
+    - event: EIP712DomainChanged()
+    - event: FlashLoan(uint256 amount)
+    - event: HooksUpdated(uint24 hooksBefore, uint24 hooksAfter)
+    - event: Initialized(uint64 version)
+    - event: NotificationSent(address indexed notificationReceiver, bool success)
+    - event: Repay(address indexed sender, address indexed owner, uint256 assets, uint256 shares)
+    - event: Transfer(address indexed from, address indexed to, uint256 value)
+    - event: Withdraw(address indexed sender, address indexed receiver, address indexed owner, uint256 assets, uint256 shares)
+    - event: WithdrawProtected(address indexed sender, address indexed receiver, address indexed owner, uint256 assets, uint256 shares)
+    - event: WithdrawnFeed(uint256 daoFees, uint256 deployerFees)
+raw_events: true
