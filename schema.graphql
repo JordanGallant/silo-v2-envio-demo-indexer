@@ -114,3 +114,36 @@ type Silo_WithdrawnFeed {
   daoFees: BigInt!
   deployerFees: BigInt!
 }
+type Token_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type Token_DelegateChanged {
+  id: ID!
+  delegator: String!
+  fromDelegate: String!
+  toDelegate: String!
+}
+
+type Token_DelegateVotesChanged {
+  id: ID!
+  delegate: String!
+  previousBalance: BigInt!
+  newBalance: BigInt!
+}
+
+type Token_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Token_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+}
